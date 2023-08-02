@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class RegistrationForm extends JDialog{
     private JTextField Email;
@@ -75,6 +77,17 @@ public class RegistrationForm extends JDialog{
     public User user;
     private User addUserToDatabase(String name, String email, String phone, String address, String password) {
         User user=null;
+        final String DB_URL="jdbc:mysql://localhost/MyStore?serverTimezone=UTC";
+        final String USERNAME ="root";
+        final String PASSWORD="";
+        try{
+            Connection conn= DriverManager.getConnection(DB_URL,USERNAME,PASSWORD);
+            Statement stmt=conn.createStatement();
+            String sql=
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         return user;
     }
 
