@@ -61,6 +61,21 @@ public class RegistrationForm extends JDialog{
             return;
 
         }
+        user=addUserToDatabase(name,email,phone,address,password);
+        if(user!=null){
+            dispose();
+        }else {
+            JOptionPane.showMessageDialog(this,
+                    "Failed to register new user",
+                    "Try again",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public User user;
+    private User addUserToDatabase(String name, String email, String phone, String address, String password) {
+        User user=null;
+        return user;
     }
 
     public static void main(String[] args) {
