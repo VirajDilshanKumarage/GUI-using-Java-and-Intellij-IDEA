@@ -40,6 +40,7 @@ public class RegistrationForm extends JDialog{
             }
         });
         setVisible(true);
+      
     }
 
     private void registerUser() {
